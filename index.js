@@ -17,7 +17,14 @@ inquirer.prompt(questions).then((answers) => {
       break;
   }
 
+  const logoData = `
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+      ${shape.render()}
+      <!-- You can also render the text here if needed -->
+    </svg>
+  `;
 
-  fs.writeFileSync('logo.svg', svgContent, 'utf-8');
+
+  fs.writeFileSync('logo.svg', logoData, 'utf-8');
   console.log('Generated logo.svg');
 });
